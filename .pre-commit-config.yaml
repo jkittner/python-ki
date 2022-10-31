@@ -14,13 +14,21 @@ repos:
     -   id: double-quote-string-fixer
     -   id: check-added-large-files
     -   id: check-merge-conflict
+-   repo: https://github.com/pycqa/flake8
+    rev: 5.0.4
+    hooks:
+    -   id: flake8
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v2.0.0
+    hooks:
+    -   id: autopep8
 -   repo: https://github.com/asottile/reorder_python_imports
-    rev: v3.8.5
+    rev: v3.9.0
     hooks:
     -   id: reorder-python-imports
         args: [--py3-plus]
 -   repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v2.1.0
+    rev: v2.2.0
     hooks:
     -   id: setup-cfg-fmt
 -   repo: https://github.com/theendlessriver13/double-indent
@@ -33,7 +41,7 @@ repos:
     -   id: add-trailing-comma
         args: [--py36-plus]
 -   repo: https://github.com/asottile/pyupgrade
-    rev: v3.1.0
+    rev: v3.2.0
     hooks:
     -   id: pyupgrade
         args: [--py39-plus]
@@ -51,6 +59,18 @@ repos:
         name: debug-statements-jupyter
         args: [pre_commit_hooks.debug_statement_hook]
         additional_dependencies: [pre-commit-hooks]
+    -   id: nbqa
+        name: remove-trailing-whitespace-jupyter
+        args: [pre_commit_hooks.trailing_whitespace_fixer]
+        additional_dependencies: [pre-commit-hooks]
+    -   id: nbqa
+        name: flake8-jupyter
+        args: [flake8]
+        additional_dependencies: [flake8]
+    -   id: nbqa
+        name: autopep8-jupyter
+        args: [autopep8, -i]
+        additional_dependencies: [autopep8]
     -   id: nbqa
         name: double-quote-string-fixer-jupyter
         args: [pre_commit_hooks.string_fixer]
