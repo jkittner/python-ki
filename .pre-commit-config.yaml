@@ -19,7 +19,7 @@ repos:
     hooks:
     -   id: flake8
 -   repo: https://github.com/pre-commit/mirrors-autopep8
-    rev: v2.0.0
+    rev: v2.0.1
     hooks:
     -   id: autopep8
 -   repo: https://github.com/asottile/reorder_python_imports
@@ -36,12 +36,12 @@ repos:
     hooks:
     -    id: double-indent
 -   repo: https://github.com/asottile/add-trailing-comma
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
     -   id: add-trailing-comma
         args: [--py36-plus]
 -   repo: https://github.com/asottile/pyupgrade
-    rev: v3.3.0
+    rev: v3.3.1
     hooks:
     -   id: pyupgrade
         args: [--py39-plus]
@@ -52,7 +52,7 @@ repos:
         additional_dependencies: [numpy>=1.22.2]
 # jupyter hooks
 -   repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.5.3
+    rev: 1.6.0
     hooks:
         # the hook below are called via an unsupported interface, this may break at some point
     -   id: nbqa
