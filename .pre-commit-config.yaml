@@ -31,7 +31,7 @@ repos:
     rev: v2.2.0
     hooks:
     -   id: setup-cfg-fmt
--   repo: https://github.com/theendlessriver13/double-indent
+-   repo: https://github.com/jkittner/double-indent
     rev: 0.1.4
     hooks:
     -    id: double-indent
